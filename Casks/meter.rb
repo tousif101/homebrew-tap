@@ -12,7 +12,6 @@ cask "meter" do
   desc "Local-first menu bar usage monitor for Claude Code and Codex"
   homepage "https://github.com/tousif101/meter"
 
-  depends_on macos: ">= :catalina"
 
   app "Meter.app"
 
