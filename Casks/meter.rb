@@ -1,13 +1,17 @@
 cask "meter" do
   version "0.1.0"
-  sha256 "8b0a4d5bd7d838923348878a751bce0f5283e25dfff875830de389aa329eb3b7"
-
-  url "https://github.com/tousif101/meter/releases/download/v#{version}/Meter_#{version}_aarch64.dmg"
+  on_arm do
+    sha256 "8b0a4d5bd7d838923348878a751bce0f5283e25dfff875830de389aa329eb3b7"
+    url "https://github.com/tousif101/meter/releases/download/v#{version}/Meter_#{version}_aarch64.dmg"
+  end
+  on_intel do
+    sha256 "b2d42899161c6700fb55dfa55c6c0866d31cb6e19ca06ea77b2a7261c0be560a"
+    url "https://github.com/tousif101/meter/releases/download/v#{version}/Meter_#{version}_x64.dmg"
+  end
   name "Meter"
   desc "Local-first menu bar usage monitor for Claude Code and Codex"
   homepage "https://github.com/tousif101/meter"
 
-  depends_on arch: :arm64
   depends_on macos: ">= :catalina"
 
   app "Meter.app"
